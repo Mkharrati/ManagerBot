@@ -24,8 +24,3 @@ def search_user(username: str):
         response.status_code,
         response.json()
     )
-
-def BytetoGB(Byte):
-    return Byte / 1073741824
-    
-    

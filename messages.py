@@ -2,6 +2,10 @@ from api import (
     search_user
 )
 
+from utils import(
+    BytetoGB
+)
+
 def start():
     message = '''
 Hi!
@@ -17,15 +21,15 @@ def user_info(username: str):
             info = info['response']
             message = f'''
 <b>Username : </b> {info['username']}
-<b>Data Usage :</b> {info['lifetimeUsedTrafficBytes']}
+<b>Data Usage :</b> {BytetoGB(info['lifetimeUsedTrafficBytes'])}
 <b>Expiration Date: </b> {info['expireAt']}
 ➖➖➖➖➖➖➖➖➖➖➖
 <b>Subscription link : </b> <code>{info['subscriptionUrl']}</code>
 '''
             return message
-        case (status_code, info) if "A063" in str(info):
+        case (404, info):
             return "User not found ❗️"
         case _:
-            return info
+            return str(info)
 
                  
