@@ -6,5 +6,6 @@ def extract_username(text: str):
     text = text.split(":")[1].strip()
     return text
 
-def BytetoGB(Byte):
-    return Byte / 1073741824
+def bytetoGB(byte):
+    '''convert byte to gigabyte'''
+    return byte / 1073741824

@@ -6,7 +6,7 @@ clear
 
 echo
 echo
-echo "                Welcome to ManagetBot"
+echo "                Welcome to ManagerBot"
 echo
 echo
 
@@ -25,28 +25,28 @@ EOM
 
 sudo apt update && upgrade -y
 
-apt install python3 dotenv python3-venv python3-pip git -y
+sudo apt install python3 dotenv python3-venv python3-pip git -y
 
-cd /root
+sudo cd /root
 
-git clone https://github.com/Mkharrati/ManagerBot.git && cd ManagerBot
+sudo git clone https://github.com/Mkharrati/ManagerBot.git && cd ManagerBot
 
-python3 -m venv Manager-venv
+sudo python3 -m venv Manager-venv
 
-source Manager-venv/bin/activate
+sudo source Manager-venv/bin/activate
 
-pip install -r requirements.txt
+sudo pip install -r requirements.txt
 
-mv /root/.env /root/ManagerBot/
+sudo mv /root/.env /root/ManagerBot/
 
-chmod +x main.py
+sudo chmod +x main.py
 
-nohup python3 main.py & disown
+sudo nohup python3 main.py & disown
 
 clear
 
 echo
 echo
-echo "                 Manager bot runned successfully ✅"
+echo "                 Manager bot ruined successfully ✅"
 echo
 echo
